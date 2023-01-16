@@ -72,9 +72,9 @@ function gotResult(error, results)
         console.log(error);
     }
     console.log(results);
-    document.getElementById('label').innerHTML = 'Label: ' + results[0].label;
+    document.getElementById('Label').innerHTML = 'Label: ' + results[0].label;
     Resultsone=results[0].label;
-    document.getElementById('confidence').innerHTML = 'Confidence: ' + Math.round(results[0].confidence * 100) + '%';
+    document.getElementById('Confidence').innerHTML = 'Confidence: ' + Math.round(results[0].confidence * 100) + '%';
 
     utterThis = new SpeechSynthesisUtterance(results[0].label);
     synth.speak(utterThis);
