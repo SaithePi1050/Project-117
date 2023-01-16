@@ -5,8 +5,9 @@ score=0;
 timerCheck="";
 Answer = "";
 Resultsone = "";
+sketch="";
 
-image_array=["apple","mango","strawberry","aeroplane","star","line","triangle"];
+image_array=["apple","mango","strawberry","aeroplane","star","line","triangle", "beach", "rain"];
 
 function clearCanvas() 
 {
@@ -41,7 +42,7 @@ function draw()
    }
    timer++;
    document.getElementById("Timer").innerHTML = timer;
-   if (timer > 500) 
+   if (timer > 1000) 
    {
     timer = 0;
     timerCheck = "set";
@@ -49,7 +50,7 @@ function draw()
    if (Resultsone == sketch) 
    {
     score++;
-    document.getElementById("Score").innerHTML = timer;
+    document.getElementById("Score").innerHTML = score;
     Answer = "set";
    }
    if(Answer=="set" || timerCheck=="set"){ timerCheck=""; Answer=""; timer=0; update_canvas(); }
@@ -82,7 +83,7 @@ function gotResult(error, results)
 
 function update_canvas()
 { 
-    random_number=Math.floor(Math.random()*7); 
+    random_number=Math.floor(Math.random()*9); 
     sketch=image_array[random_number]; 
-    document.getElementById("Sketch_name").innerHTML="Skecth to be drawn"+sketch; 
+    document.getElementById("Sketch_name").innerHTML="Skecth to be drawn " + sketch; 
 } 
